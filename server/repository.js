@@ -5,13 +5,13 @@ module.exports = {
     try {
       const result = await db.query(
         `SELECT level, grade,
-         max_mark AS maxMark, 
-         min_mark AS minMark 
+         max_mark AS "maxMark", 
+         min_mark AS "minMark" 
          FROM grade_scale
         `
       );
-      const gradeScale = result.rows;
-      return res.json(gradeScale);
+      return result.rows;
+      
     } catch (err) {
       next(err);
     }
