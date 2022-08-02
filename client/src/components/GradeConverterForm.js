@@ -8,6 +8,7 @@ const GradeConverterForm = ({ gradeScale }) => {
   const [mark, setMark] = useState(0);
   const [grade, setGrade] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  console.log(gradeScale); //remove
 
   const handleSubmit = (e) => {
     e.preventDefault();
