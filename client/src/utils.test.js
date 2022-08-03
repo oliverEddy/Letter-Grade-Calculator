@@ -148,7 +148,7 @@ describe("getLetterGrade", () => {
     );
   });
 
-  fit.each([
+  it.each([
     ["A+", 90, 5],
     ["A", 88, 5],
     ["A-", 82, 5],
@@ -180,4 +180,63 @@ describe("getLetterGrade", () => {
       expect(resultGrade).toBe(expectedGrade);
     }
   );
+  it("getLetterGrade function should return an error message if mark is over 100", () => {
+    const util = gradeScale;
+    const mark = 101;
+    const level = 5;
+
+    expect(() => getLetterGrade(util, mark, level)).toThrow(
+      "Mark cannot be greater than 100"
+    );
+  });
+  it("getLetterGrade function should return an error message if mark is a negative number", () => {
+    const util = gradeScale;
+    const mark = -101;
+    const level = 5;
+
+    expect(() => getLetterGrade(util, mark, level)).toThrow(
+      "Mark cannot be a negative number"
+    );
+  });
+  it("getLetterGrade function should return an error message if mark is undefined", () => {
+    const util = gradeScale;
+    const mark = undefined;
+    const level = 5;
+
+    expect(() => getLetterGrade(util, mark, level)).toThrow(
+      "Mark cannot be undefined"
+    );
+  });
+  //this one needs work (below)
+  it("getLetterGrade function should return an error message if mark not a number (type of string)", () => {
+    const util = gradeScale;
+    const mark = "foo";
+    const level = 5;
+
+    expect(() => getLetterGrade(util, mark, level)).toThrow(
+      "Mark must be a valid number"
+    );
+  });
+  //under
+  it("getLetterGrade function should return an error message if level is not 5 or 6", () => {
+    const util = gradeScale;
+    const mark = 50;
+    const level = 4;
+
+    expect(() => getLetterGrade(util, mark, level)).toThrow(
+      "Please select Level 5 or 6"
+    );
+  });
+  it("getLetterGrade function should return an error message if level is undefined", () => {
+    const util = gradeScale;
+    const mark = 50;
+    const level = undefined;
+
+    expect(() => getLetterGrade(util, mark, level)).toThrow(
+      "Please select a level to calculate grade"
+    );
+  });
 });
+// mark -1 101 "1" undefined yes yes
+// level "level 4" "" undefined yes yes no
+// the string "" "1" errors have not been done

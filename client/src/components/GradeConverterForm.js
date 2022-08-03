@@ -4,7 +4,7 @@ import { getLetterGrade } from "../utils";
 import styles from "./GradeConverterForm.module.css";
 
 const GradeConverterForm = ({ gradeScale }) => {
-  const [level, setLevel] = useState("Level 5");
+  const [level, setLevel] = useState(5);
   const [mark, setMark] = useState(0);
   const [grade, setGrade] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -39,8 +39,8 @@ const GradeConverterForm = ({ gradeScale }) => {
             setLevel(e.target.value);
           }}
         >
-          <option value="Level 5">Level 5</option>
-          <option value="Level 6">Level 6</option>
+          <option value="5">Level 5</option>
+          <option value="6">Level 6</option>
         </select>
         <label htmlFor="mark">Mark</label>
         <input
