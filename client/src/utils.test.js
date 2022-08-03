@@ -180,63 +180,39 @@ describe("getLetterGrade", () => {
       expect(resultGrade).toBe(expectedGrade);
     }
   );
-  it("getLetterGrade function should return an error message if mark is over 100", () => {
-    const util = gradeScale;
-    const mark = 101;
-    const level = 5;
 
-    expect(() => getLetterGrade(util, mark, level)).toThrow(
-      "Mark cannot be greater than 100"
-    );
-  });
-  it("getLetterGrade function should return an error message if mark is a negative number", () => {
-    const util = gradeScale;
-    const mark = -101;
-    const level = 5;
+  it.each([
+    [101, 5],
+    [-101, 5],
+    [undefined, 5],
+  ])(
+    "getLetterGrade function should return an error message if mark is not between 1 and 100",
+    (mark, level) => {
+      const util = gradeScale;
 
-    expect(() => getLetterGrade(util, mark, level)).toThrow(
-      "Mark cannot be a negative number"
-    );
-  });
-  it("getLetterGrade function should return an error message if mark is undefined", () => {
-    const util = gradeScale;
-    const mark = undefined;
-    const level = 5;
+      const expectedError =
+        "Invalid mark provided, please use a number between 0 and 100";
 
-    expect(() => getLetterGrade(util, mark, level)).toThrow(
-      "Mark cannot be undefined"
-    );
-  });
-  //this one needs work (below)
-  it("getLetterGrade function should return an error message if mark not a number (type of string)", () => {
-    const util = gradeScale;
-    const mark = "foo";
-    const level = 5;
+      expect(() => getLetterGrade(util, mark, level)).toThrow(expectedError);
+    }
+  );
 
-    expect(() => getLetterGrade(util, mark, level)).toThrow(
-      "Mark must be a valid number"
-    );
-  });
-  //under
-  it("getLetterGrade function should return an error message if level is not 5 or 6", () => {
-    const util = gradeScale;
-    const mark = 50;
-    const level = 4;
+  it.each([
+    [50, 4],
+    [50, 7],
+    [50, undefined],
+  ])(
+    "getLetterGrade function should return an error message if level is not 5 or 6",
+    (mark, level) => {
+      const util = gradeScale;
 
-    expect(() => getLetterGrade(util, mark, level)).toThrow(
-      "Please select Level 5 or 6"
-    );
-  });
-  it("getLetterGrade function should return an error message if level is undefined", () => {
-    const util = gradeScale;
-    const mark = 50;
-    const level = undefined;
+      const expectedError = "Invalid level provided, please use 5 or 6.";
 
-    expect(() => getLetterGrade(util, mark, level)).toThrow(
-      "Please select a level to calculate grade"
-    );
-  });
+      expect(() => getLetterGrade(util, mark, level)).toThrow(expectedError);
+    }
+  );
 });
+
 // mark -1 101 "1" undefined yes yes
 // level "level 4" "" undefined yes yes no
 // the string "" "1" errors have not been done

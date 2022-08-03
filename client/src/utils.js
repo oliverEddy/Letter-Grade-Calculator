@@ -9,7 +9,7 @@ const getLetterGrade = (gradeScale, mark, level) => {
     );
   }
 
-  if (level < 5 || level > 6) {
+  if (level === undefined || level < 5 || level > 6) {
     throw new Error("Invalid level provided, please use 5 or 6.");
   }
 
