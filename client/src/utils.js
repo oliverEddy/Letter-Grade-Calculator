@@ -13,7 +13,7 @@ const getLetterGrade = (gradeScale, mark, level) => {
     throw new Error("Invalid level provided, please use 5 or 6.");
   }
 
-  if (level === 5) {
+  if (level === "Level 5") {
     const grades = gradeScale.filter((item) => item.level === "Level 5");
 
     const found = grades.find((item) => {
@@ -22,7 +22,7 @@ const getLetterGrade = (gradeScale, mark, level) => {
     return found.grade;
   }
 
-  if (level === 6) {
+  if (level === "Level 6") {
     const grades = gradeScale.filter((item) => item.level === "Level 6");
 
     const found = grades.find((item) => {
