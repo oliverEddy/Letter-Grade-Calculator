@@ -1,3 +1,22 @@
 {
-  "liveServer.settings.root": "/Submission"
+    "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f17166",
+    "activityBar.activeBorder": "#6df277",
+    "activityBar.background": "#f17166",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#6df277",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#f17166",
+    "statusBar.background": "#ed4637",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#f17166",
+    "statusBarItem.remoteBackground": "#ed4637",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#ed4637",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#ed463799",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#ed4637"
 }
