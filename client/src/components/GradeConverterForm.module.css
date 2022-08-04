@@ -3,3 +3,6 @@
 .mainFormButton {
   font-family: "Righteous", sans-serif;
 }
+.mainFormNumber {
+  color: red;
+}
