@@ -25,7 +25,7 @@ const GradeConverterForm = ({ gradeScale }) => {
       {errorMessage && <ErrorMessage message={errorMessage} />}
       {grade && (
         <p>
-          The grade for mark {mark} at {level} is {grade}.
+          The grade for mark {mark} at level {level} is {grade}.
         </p>
       )}
       <form className={styles.mainForm} onSubmit={handleSubmit}>
