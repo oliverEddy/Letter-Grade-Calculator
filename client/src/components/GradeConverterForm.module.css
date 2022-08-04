@@ -3,6 +3,34 @@
 .mainFormButton {
   font-family: "Righteous", sans-serif;
 }
-.mainFormNumber {
-  color: red;
+.mainFormNumber,
+.mainFormSelect {
+  width: 70%;
+  justify-self: center;
+  box-sizing: border-box;
+  padding: 0.85rem 1.6rem;
+  margin: 1rem;
+}
+.mainForm {
+  display: grid;
+}
+.mainFormButton {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.85rem 1.6rem;
+  text-align: center;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 1rem;
+  width: 50%;
+  justify-self: center;
+}
+.mainResult {
+  text-align: center;
+}
+.levelLabel,
+.markLabel {
+  text-align: center;
 }
