@@ -1,33 +1,56 @@
-openapi: "3.0.2"
+openapi: 3.0.2
+x-stoplight:
+  id: f5qcidndwpmva
 info:
-  version: "1.0"
+  version: '1.0'
   title: Welcome to the Grade Scale API!
   description: This API allows users to view the grade scale
+  "contact": {
+      "name": "Oliver Eddy",
+      "url": "https://exsample.com",
+      "email": "oliver.eddy@developersinstitute.co.nz"
+  }
+  "license": {
+      "name": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
 servers:
-  - url: "http://localhost:5001/api"
+  - url: 'http://localhost:5001/api'
     description: Development server
 paths:
   /grade-scale:
     get:
+      parameters:
+        - in: query
+          name: grades
+          description: User input for get grade scale
+          schema:
+            type: string
+            enum: [grade, level]
+
       summary: Returns the grade scale
       description: Get the grade scale
       operationId: get-grade-scale
       tags:
         - grade-scale
-      
       responses:
-        200:
+        '200':
           description: OK
           content:
             application/json:
+                          
+                
               schema:
-                type: object
-        500:
+                $ref: '#/components/schemas/Grade'
+                
+                
+                
+        '500':
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 components:
   schemas:
     Grade:
@@ -35,12 +58,41 @@ components:
       properties:
         level:
           type: string
+          enum:
+            - "Level 5"
+            - "Level 6"
+        grade:
+          type: string
+          enum: 
+            - "A+"
+            - "A"
+            - "A-"
+            - "B+"
+            - "B"
+            - "B-"
+            - "C+"
+            - "C"
+            - "C-"
+            - "D"
+            - "E"
+        minMark:
+          type: number
+        maxMark:
+          type: number
       required:
         - level
+        - grade
+        - minMark
+        - maxMark
     Error:
       type: object
       properties:
         message:
           type: string
 tags:
-  - name: grade-scale
+ [
+      {
+         "name":"grade-scale",
+         "description":"End-user information"
+      }
+   ]

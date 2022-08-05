@@ -3,4 +3,5 @@
   padding-left: 2rem;
   padding-right: 2rem;
   box-sizing: content-box;
+  display: grid;
 }
