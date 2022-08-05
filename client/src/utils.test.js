@@ -183,7 +183,7 @@ describe("getLetterGrade", () => {
     [-101, 5],
     [undefined, 5],
   ])(
-    "getLetterGrade function should return an error message if mark is not between 1 and 100",
+    "getLetterGrade function should return an error message if mark is not between 1 and 100, or if mark is undefined",
     (mark, level) => {
       const util = gradeScale;
 
@@ -199,7 +199,7 @@ describe("getLetterGrade", () => {
     [50, 7],
     [50, undefined],
   ])(
-    "getLetterGrade function should return an error message if level is not 5 or 6",
+    "getLetterGrade function should return an error message if level is not 5 or 6, or of level is undefined",
     (mark, level) => {
       const util = gradeScale;
 
