@@ -20,6 +20,14 @@ servers:
 paths:
   /grade-scale:
     get:
+      parameters:
+        - in: query
+          name: get grade scale
+          description: Returns letter grade
+          schema:
+            type: string
+            enum: [grade, level]
+
       summary: Returns the grade scale
       description: Get the grade scale
       operationId: get-grade-scale
@@ -30,6 +38,8 @@ paths:
           description: OK
           content:
             application/json:
+                          
+                
               schema:
                 $ref: '#/components/schemas/Grade'
                 
