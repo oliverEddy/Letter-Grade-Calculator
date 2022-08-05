@@ -11,7 +11,6 @@ module.exports = {
         `
       );
       return result.rows;
-      
     } catch (err) {
       next(err);
     }
