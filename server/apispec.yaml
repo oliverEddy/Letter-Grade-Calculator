@@ -22,7 +22,7 @@ paths:
     get:
       parameters:
         - in: query
-          name: get grade scale
+          name: grades
           description: User input for get grade scale
           schema:
             type: string
@@ -58,8 +58,23 @@ components:
       properties:
         level:
           type: string
+          enum:
+            - "Level 5"
+            - "Level 6"
         grade:
           type: string
+          enum: 
+            - "A+"
+            - "A"
+            - "A-"
+            - "B+"
+            - "B"
+            - "B-"
+            - "C+"
+            - "C"
+            - "C-"
+            - "D"
+            - "E"
         minMark:
           type: number
         maxMark:
