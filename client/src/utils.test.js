@@ -136,9 +136,6 @@ const gradeScale = [
 ];
 
 describe("getLetterGrade", () => {
-  test.todo("Test happy path scenarios");
-  test.todo("Test negative scenarios");
-
   test("Throws an error for invalid gradeScale", () => {
     const corruptGradeScale = {};
     const mark = 70;
