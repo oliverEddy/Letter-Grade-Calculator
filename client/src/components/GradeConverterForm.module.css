@@ -6,6 +6,11 @@
 .mainForm {
   display: grid;
 }
+.levelLabel,
+.markLabel,
+.mainResult {
+  text-align: center;
+}
 .mainFormNumber,
 .mainFormSelect {
   width: 70%;
@@ -26,13 +31,6 @@
   margin-top: 1rem;
   width: 50%;
   justify-self: center;
-}
-.mainResult {
-  text-align: center;
-}
-.levelLabel,
-.markLabel {
-  text-align: center;
 }
 @media only screen and (min-width: 40rem) {
   .mainForm {

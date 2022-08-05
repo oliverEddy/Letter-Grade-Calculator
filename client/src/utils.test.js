@@ -212,7 +212,3 @@ describe("getLetterGrade", () => {
     }
   );
 });
-
-// mark -1 101 "1" undefined yes yes
-// level "level 4" "" undefined yes yes no
-// the string "" "1" errors have not been done
