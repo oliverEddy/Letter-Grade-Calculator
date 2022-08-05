@@ -23,7 +23,7 @@ paths:
       parameters:
         - in: query
           name: get grade scale
-          description: Returns letter grade
+          description: User input for get grade scale
           schema:
             type: string
             enum: [grade, level]
